@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
 
     var Party = sequelize.define('party', {
         id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-        name: DataTypes.STRING
+        name: DataTypes.STRING,
+        longName: DataTypes.STRING
     });
 
     return Party;
