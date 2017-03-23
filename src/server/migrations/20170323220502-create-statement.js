@@ -28,6 +28,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('Statements');
+    return queryInterface.dropTable('statements');
   }
 };
