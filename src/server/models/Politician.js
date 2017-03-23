@@ -1,17 +1,14 @@
 /**
  * Definition of Politician
  *
- * @copyright  2016-today Justso GmbH
- * @author     j.schirrmacher@justso.de
+ * @author     joachimschirrmacher@gmail.com
  */
+'use strict';
 
 /*global module*/
 
 module.exports = function(sequelize, DataTypes) {
-    'use strict';
-
     var Politician = sequelize.define('politician', {
-        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
         firstname: DataTypes.STRING,
         lastname: DataTypes.STRING
     }, {
@@ -21,6 +18,5 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
     return Politician;
 };

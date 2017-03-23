@@ -1,17 +1,11 @@
 /**
  * Definition of Statement
  *
- * @copyright  2016-today Justso GmbH
- * @author     j.schirrmacher@justso.de
+ * @author     joachimschirrmacher@gmail.com
  */
-
 'use strict';
-
-/*global module*/
 module.exports = function(sequelize, DataTypes) {
-
-    var Statement = sequelize.define('statement', {
-        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    var Statement = sequelize.define('Statement', {
         text: DataTypes.STRING,
         context: DataTypes.STRING,
         when: DataTypes.DATE
@@ -22,6 +16,5 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
     return Statement;
 };
