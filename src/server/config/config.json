@@ -4,7 +4,10 @@
     "password": "trustfact",
     "database": "trustfact",
     "host": "database",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "charset": "utf8"
+    }
   },
   "test": {
     "username": "root",
