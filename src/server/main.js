@@ -8,6 +8,8 @@ const express = require('express');
 const app = express();
 const models = require("./models");
 
+const port = process.env.PORT || 3000
+
 function nocache(req, res, next) {
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     res.header('Expires', '-1');
@@ -52,8 +54,8 @@ app
             .then(data => res.json(data));
     });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+app.listen(port, () => {
+    console.log('Listening on port ' + port);
 });
 
 app.use(function(req, res) {
