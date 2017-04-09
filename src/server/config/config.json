@@ -3,7 +3,7 @@
     "username": "trustfact",
     "password": "trustfact",
     "database": "trustfact",
-    "host": "database",
+    "host": "localhost",
     "dialect": "mysql",
     "define": {
       "charset": "utf8"
