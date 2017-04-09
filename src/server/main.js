@@ -25,13 +25,15 @@ app.use(expressWinston.logger({
 }))
 
 function nocache(req, res, next) {
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.header('Expires', '-1');
-    res.header('Pragma', 'no-cache');
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
-    res.charset = 'utf-8';
-    next();
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+    res.header('Expires', '-1')
+    res.header('Pragma', 'no-cache')
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
+    res.charset = 'utf-8'
+    next()
 }
+
+app.use(express.static('./public'))
 
 app
     .get('/parties', nocache, (req, res) => {
@@ -68,21 +70,21 @@ app
             .then(() => models.statement.findAll({attributes: ['id', 'text']}))
             .then(data => res.json(data));
     })
-    .get('/statement/:id', nocache, (req, res) => {
+    .get('/statements/:id', nocache, (req, res) => {
         models.sequelize.sync()
             .then(() => models.statement.findById(req.params.id))
             .then(data => res.json(data));
-    });
+    })
 
 app.listen(port, () => {
-    console.log('Listening on port ' + port);
-});
+    console.log('Listening on port ' + port)
+})
 
 app.use(function(req, res) {
-    res.status(404).send("Sorry can't find that!");
-});
+    res.status(404).send("Sorry can't find that!")
+})
 
 app.use(function (err, req, res) {
-    console.error(err.stack);
+    console.error(err.stack)
     res.status(500).send('Something broke!')
-});
+})

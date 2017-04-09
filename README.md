@@ -14,15 +14,11 @@ Pre-requisites are Node.js and Docker. Just clone the repository, then
 The first one creates and runs Docker containers for the MySQL database and the backend.
 Then, the frontend dependencies are installed and the WebPack development server is started.
 
-Currently, there is nothing in the database, you need to put it in there yourself. To connect to
-the database, enter
+## Frontend
+The frontend can be accessed at http://localhost:8080
 
-    docker exec -it tf_database_1 mysql -p
-    
-When asked for the password, use 'test123' (yes, I know, that's a pretty obvious password, and you
-should not even put passwords in a repository, but this is currently only a first start, not a
-productive system, and not even online). Then you can insert some test data. I will provide such
-soon as an initialization script.
+## Backend
+To start the backend, call 'npm start' in /src/server. I provide a backend with a database in https://trustfact.dilab.co/api/v2/
 
-## I need you!
+## I need you to contribute!
 If you feel like you want to help with the project, please get in contact!
