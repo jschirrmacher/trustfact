@@ -4,11 +4,25 @@
  * @copyright  2016-today Justso GmbH
  * @author     j.schirrmacher@justso.de
  */
-const express = require('express');
-const app = express();
-const models = require("./models");
+const express = require('express')
+const app = express()
+const winston = require('winston')
+const expressWinston = require('express-winston')
+const models = require("./models")
 
 const port = process.env.PORT || 3000
+winston.level = process.env.LOG_LEVEL || 'info'
+winston.remove(winston.transports.Console)
+winston.add(winston.transports.Console, {'timestamp':true})
+
+app.enable('trust proxy')
+app.use(expressWinston.logger({
+    transports: [
+        new winston.transports.Console({
+            'timestamp':true
+        })
+    ]
+}))
 
 function nocache(req, res, next) {
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -22,7 +36,13 @@ function nocache(req, res, next) {
 app
     .get('/parties', nocache, (req, res) => {
         models.sequelize.sync()
-            .then(() => models.party.findAll({attributes: ['id', 'name', 'longName']}))
+            .then(() => models.party.findAll({
+                attributes: ['id', 'name', 'longName', 'logoUrl'],
+                where: {
+                    nameStatBundesamt: { $ne: null }
+                },
+                raw: true
+            }))
             .then(data => res.json(data));
     })
     .get('/parties/:id', nocache, (req, res) => {
