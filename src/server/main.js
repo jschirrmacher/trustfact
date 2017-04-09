@@ -22,10 +22,10 @@ function nocache(req, res, next) {
 app
     .get('/parties', nocache, (req, res) => {
         models.sequelize.sync()
-            .then(() => models.party.findAll({attributes: ['id', 'name']}))
+            .then(() => models.party.findAll({attributes: ['id', 'name', 'longName']}))
             .then(data => res.json(data));
     })
-    .get('/party/:id', nocache, (req, res) => {
+    .get('/parties/:id', nocache, (req, res) => {
         models.sequelize.sync()
             .then(() => models.party.findById(req.params.id))
             .then(data => res.json(data));
@@ -38,7 +38,7 @@ app
             }))
             .then(data => res.json(data));
     })
-    .get('/politician/:id', nocache, (req, res) => {
+    .get('/politicians/:id', nocache, (req, res) => {
         models.sequelize.sync()
             .then(() => models.politician.findById(req.params.id))
             .then(data => res.json(data));
