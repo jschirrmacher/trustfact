@@ -1,5 +1,6 @@
 apps:
   - script   : ./main.js
+    name     : trustfactV2
     instances: 1
     exec_mode: cluster
     watch    : true
