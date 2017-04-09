@@ -11,7 +11,9 @@ module.exports = function(sequelize, DataTypes) {
     var Party = sequelize.define('party', {
         name: DataTypes.STRING,
         longName: DataTypes.STRING,
-        logoUrl: DataTypes.STRING
+        logoUrl: DataTypes.STRING,
+        url: DataTypes.STRING,
+        founded: DataTypes.DATEONLY
     });
     return Party;
 };
