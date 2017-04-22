@@ -14,13 +14,15 @@
     "password": null,
     "database": "test.sqlite",
     "host": "test.sqlite",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "logging": false
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "prod.sqlite",
     "host": "prod.sqlite",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "logging": false
   }
 }
