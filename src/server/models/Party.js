@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         longName: DataTypes.STRING,
         nameStatBundesamt: DataTypes.STRING,
         nameBundeswahlleiter: DataTypes.STRING,
+        nameWikipedia: DataTypes.STRING,
         logoUrl: DataTypes.STRING,
         url: DataTypes.STRING,
         founded: DataTypes.DATEONLY,
