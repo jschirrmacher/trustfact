@@ -5,7 +5,7 @@ const winston = require('winston')
 const PartyUpdater = require('./partyUpdater')
 const syncData = PartyUpdater()
 
-const fileName = './bundeswahlleiter.html'
+const fileName = './tmp/bundeswahlleiter.html'
 const update = process.argv.length > 2 && process.argv[2] === 'update'
 
 fs.open(fileName, 'r', function(error, fd) {
@@ -34,7 +34,7 @@ function parse(text) {
             }
             let link = longName[0].find('//a')
             if (link.length) {
-                current.statutes = link[0].attr('href').value()
+                current.statutes = link[0].attr('href').value().replace('../..', 'https://bundeswahlleiter.de')
             }
             syncData(current, 'nameBundeswahlleiter', (existing, current) => {
                 if (!existing) {

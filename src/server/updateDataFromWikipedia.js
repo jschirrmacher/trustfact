@@ -4,7 +4,7 @@ const winston = require('winston')
 const PartyUpdater = require('./partyUpdater')
 const syncData = PartyUpdater()
 
-const fileName = './wikipedia.json'
+const fileName = './tmp/wikipedia.json'
 const update = process.argv.length > 2 && process.argv[2] === 'update'
 
 fs.open(fileName, 'r', function(error, fd) {
