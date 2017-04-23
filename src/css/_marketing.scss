@@ -1,0 +1,39 @@
+.marketing {
+  .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  h2 {
+    font-weight: normal;
+  }
+  .col-lg-4 {
+    p {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+      &:nth-of-type(even) {
+        img {
+          float: left;
+          margin-right: 20px;
+        }
+
+        h2, p {
+          text-align: left;
+        }
+      }
+
+      &:nth-of-type(odd) {
+        img {
+          float: right;
+          margin-left: 20px;
+        }
+
+        h2, p {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

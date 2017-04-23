@@ -1,9 +1,23 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+@import url(./css/style.css);
 
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+body {
+  line-height: 1.4;
+  background: #ffffff;
+  color: #444444;
+//  opacity:0;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+}
+footer { font-size: 13px; margin-top: 3em; }
+@media (max-width: 480px) {
+  body { font-size: 15px; }
 }
 
 /* enables CSS3 transition for simple collapses, accordion and also navbar in responsive view */
