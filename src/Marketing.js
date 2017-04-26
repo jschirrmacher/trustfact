@@ -53,7 +53,7 @@ export default class Marketing extends React.Component {
 
                 <Row className="featurette">
                     <Col md={5}>
-                        <img class="featurette-image img-responsive center-block" alt="" src="/img/Zusammenarbeit.jpg" />
+                        <img className="featurette-image img-responsive center-block" alt="" src="/img/Zusammenarbeit.jpg" />
                     </Col>
                     <Col md={7}>
                         <h2 className="featurette-heading">Wie machen wir das{'?'}</h2>
