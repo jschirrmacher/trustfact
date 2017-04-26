@@ -2,11 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Navbar, Nav, NavItem, Carousel} from 'react-bootstrap'
 
+import goat from './img/goats.jpg'
+import Marketing from './Marketing'
+import Footer from './Footer'
+
 import DataTable from './DataTable'
 import StatementRow from './StatementRow'
 import PoliticianRow from './PoliticianRow'
 import PartyRow from './PartyRow'
-import Footer from './Footer'
 
 const apiUrls = {
     development: 'https://trustfact.dilab.co/api/v2',
@@ -44,7 +47,7 @@ ReactDOM.render(
 
         <Carousel>
             <Carousel.Item>
-                <img width={900} height={500} alt="Behauptungen prüfen" src={require('file-loader!./img/goats.jpg')} />
+                <img width={900} height={500} alt="Behauptungen prüfen" src={goat} />
                 <Carousel.Caption>
                     <h2>Stimmt das{'?'}</h2>
                     <p>In politischen Gesprächen hört man Behauptungen,<br/>
@@ -70,7 +73,7 @@ ReactDOM.render(
             </Carousel.Item>
         </Carousel>
 
-
+        <Marketing />
 
         <DataTable title="Aussagen" data={apiUrl + "/statements"}>
             <StatementRow />
