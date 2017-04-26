@@ -6,6 +6,7 @@ import DataTable from './DataTable'
 import StatementRow from './StatementRow'
 import PoliticianRow from './PoliticianRow'
 import PartyRow from './PartyRow'
+import Footer from './Footer'
 
 const apiUrls = {
     development: 'https://trustfact.dilab.co/api/v2',
@@ -45,7 +46,7 @@ ReactDOM.render(
             <Carousel.Item>
                 <img width={900} height={500} alt="Behauptungen prüfen" src={require('file-loader!./img/goats.jpg')} />
                 <Carousel.Caption>
-                    <h2>Stimmt das?</h2>
+                    <h2>Stimmt das{'?'}</h2>
                     <p>In politischen Gesprächen hört man Behauptungen,<br/>
                         von denen man sich nicht sicher ist, ob sie stimmen.</p>
                     <p>Hier kannst du sie prüfen:</p>
@@ -62,12 +63,14 @@ ReactDOM.render(
                     src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Bonn_Bundestag_Plenarsaal1.jpg"/>
                 <Carousel.Caption>
                     <h2>Politiker-Aussagen</h2>
-                    <p>Wer sagt was? Und wird das dann auch so umgesetzt?<br />
+                    <p>Wer sagt was{'?'} Und wird das dann auch so umgesetzt{'?'}<br />
                         Wir verfolgen die Aussagen und die tatsächliche Umsetzung.</p>
                     <p><a className="btn btn-lg btn-primary" href="apply" role="button">Liste der Politiker</a></p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
+
+
 
         <DataTable title="Aussagen" data={apiUrl + "/statements"}>
             <StatementRow />
@@ -78,6 +81,8 @@ ReactDOM.render(
         <DataTable title="Parteien" data={apiUrl + "/parties"}>
             <PartyRow />
         </DataTable>
+
+        <Footer />
     </div>,
     document.getElementById('root')
 )
