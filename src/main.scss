@@ -20,6 +20,16 @@ footer { font-size: 13px; margin-top: 3em; }
   body { font-size: 15px; }
 }
 
+.PageTitle {
+  background: url(img/goats.jpg);
+  background-size: cover;
+  height: 100px;
+}
+
+.table {
+  padding: 0 20px;
+}
+
 /* enables CSS3 transition for simple collapses, accordion and also navbar in responsive view */
 .collapse { transition: height .3s ease-out; /*-webkit-transition: height .3s ease-out*/ }
 

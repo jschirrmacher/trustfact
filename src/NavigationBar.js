@@ -19,16 +19,16 @@ export default class NavigationBar extends React.Component {
                             <IndexLinkContainer eventKey={1} to="/parties">
                                 <NavItem>Parteien</NavItem>
                             </IndexLinkContainer>
-                            <IndexLinkContainer eventKey={2} to="#">
+                            <IndexLinkContainer eventKey={2} to="/politicians">
                                 <NavItem>Politiker</NavItem>
                             </IndexLinkContainer>
-                            <IndexLinkContainer eventKey={3} to="#">
+                            <IndexLinkContainer eventKey={3} to="/statements">
                                 <NavItem>Behauptungen</NavItem>
                             </IndexLinkContainer>
-                            <IndexLinkContainer eventKey={4} to="#">
+                            <IndexLinkContainer eventKey={4} to="/about">
                                 <NavItem>Über uns</NavItem>
                             </IndexLinkContainer>
-                            <IndexLinkContainer eventKey={5} to="#">
+                            <IndexLinkContainer eventKey={5} to="/contact">
                                 <NavItem>Kontakt</NavItem>
                             </IndexLinkContainer>
                         </Nav>

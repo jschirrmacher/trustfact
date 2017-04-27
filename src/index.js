@@ -4,7 +4,10 @@ import { HashRouter, Route } from 'react-router-dom'
 
 import NavigationBar from './NavigationBar'
 import App from './App'
-import PartiesPage from './PartiesPage'
+import DataTable from './DataTable'
+import PartyRow from './PartyRow'
+import PoliticianRow from './PoliticianRow'
+import StatementRow from './StatementRow'
 import Footer from './Footer'
 
 import './main.scss'
@@ -21,7 +24,21 @@ ReactDOM.render((
             <NavigationBar />
 
             <Route path="/" exact component={() => (<App apiUrl={apiUrl} />)} />
-            <Route path="/parties" component={() => (<PartiesPage apiUrl={apiUrl} />)} />
+            <Route path="/parties" component={() => (
+                <DataTable title="Parteien" data={apiUrl + "/parties"}>
+                    <PartyRow />
+                </DataTable>
+            )} />
+            <Route path="/politicians" component={() => (
+                <DataTable title="Politiker" data={apiUrl + "/politicians"}>
+                    <PartyRow />
+                </DataTable>
+            )} />
+            <Route path="/statements" component={() => (
+                <DataTable title="Aussagen" data={apiUrl + "/statements"}>
+                    <StatementRow />
+                </DataTable>
+            )} />
 
             <Footer />
         </div>

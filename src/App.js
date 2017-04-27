@@ -5,10 +5,6 @@ import {Carousel} from 'react-bootstrap'
 import goat from './img/goats.jpg'
 import Marketing from './Marketing'
 
-import DataTable from './DataTable'
-import StatementRow from './StatementRow'
-import PoliticianRow from './PoliticianRow'
-
 export default class App extends React.Component {
     render() {
         return (
@@ -46,13 +42,6 @@ export default class App extends React.Component {
                 </Carousel>
 
                 <Marketing />
-
-                <DataTable title="Aussagen" data={this.props.apiUrl + "/statements"}>
-                    <StatementRow />
-                </DataTable>
-                <DataTable title="Politiker" data={this.props.apiUrl + "/politicians"}>
-                    <PoliticianRow />
-                </DataTable>
             </div>
         )
     }
