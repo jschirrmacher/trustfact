@@ -11,13 +11,13 @@ module.exports = {
             'webpack/hot/only-dev-server'
         ] : []).concat([
             './src/main.scss',
-            './src/App'
+            './src/index'
         ])
     },
     output: {
         path: './htdocs',
         publicPath: 'http://localhost:8080/',
-        filename: 'App.js'
+        filename: 'index.js'
     },
     devtool: debug && 'eval',
     module: {
