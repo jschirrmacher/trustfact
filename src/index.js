@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { HashRouter, Route } from 'react-router-dom'
 
 import NavigationBar from './NavigationBar'
-import App from './App'
+import Marketing from './Marketing'
 import DataTable from './DataTable'
 import PartyRow from './PartyRow'
 import PoliticianRow from './PoliticianRow'
@@ -23,7 +23,7 @@ ReactDOM.render((
         <div>
             <NavigationBar />
 
-            <Route path="/" exact component={() => (<App apiUrl={apiUrl} />)} />
+            <Route path="/" exact component={() => (<Marketing apiUrl={apiUrl} />)} />
             <Route path="/parties" component={() => (
                 <DataTable title="Parteien" data={apiUrl + "/parties"}>
                     <PartyRow />
