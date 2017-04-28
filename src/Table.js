@@ -13,7 +13,10 @@ export default class Table extends React.Component {
                         {this.props.name}
                     </h2>
                     <ul>
-                        {this.props.items.map((row) => <Row key={row.id} content={row} />)}
+                        {this.props.items.length
+                            ? this.props.items.map((row) => <Row key={row.id} content={row} />)
+                            : 'Keine Daten gefunden'
+                        }
                     </ul>
                 </div>
             </div>
