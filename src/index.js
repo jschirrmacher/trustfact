@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Route } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 
 import NavigationBar from './NavigationBar'
-import Marketing from './Marketing'
+import StartPage from './StartPage'
 import DataTable from './DataTable'
 import PartyRow from './PartyRow'
 import PoliticianRow from './PoliticianRow'
 import StatementRow from './StatementRow'
+import ApplyPage from './ApplyPage'
 import Footer from './Footer'
 
 import './main.scss'
@@ -23,7 +25,8 @@ ReactDOM.render((
         <div>
             <NavigationBar />
 
-            <Route path="/" exact component={() => (<Marketing apiUrl={apiUrl} />)} />
+            <Route path="/" exact component={() => <StartPage />} />
+            <Route path="/apply" component={() => <ApplyPage apiUrl={apiUrl} />} />
             <Route path="/parties" component={() => (
                 <DataTable title="Parteien" data={apiUrl + "/parties"}>
                     <PartyRow />

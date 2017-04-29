@@ -1,8 +1,10 @@
 import React from 'react'
-import {Carousel, Row, Col} from 'react-bootstrap'
+import {Carousel, Row, Col, Button} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
+
 import goat from './img/goats.jpg'
 
-export default class Marketing extends React.Component {
+export default class StartPage extends React.Component {
     render() {
         return (
             <div>
@@ -19,7 +21,9 @@ export default class Marketing extends React.Component {
                                 <div className="form-group">
                                     <input type="text" name="text" className="form-control" placeholder="Behauptung eingeben" />
                                 </div>
-                                <button type="submit" className="btn btn-primary" role="button">Nachschlagen</button>
+                                <LinkContainer to="/apply">
+                                    <Button bsSize="large" bsStyle="primary">Nachschlagen</Button>
+                                </LinkContainer>
                             </form>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -32,7 +36,9 @@ export default class Marketing extends React.Component {
                                 Wir verfolgen die Aussagen und die tatsächliche Umsetzung.
                             </p>
                             <p>
-                                <a className="btn btn-lg btn-primary" href="apply" role="button">Liste der Politiker</a>
+                                <LinkContainer to="/politicians">
+                                    <Button bsSize="large" bsStyle="primary">Liste der Politiker</Button>
+                                </LinkContainer>
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -44,7 +50,11 @@ export default class Marketing extends React.Component {
                             <img className="img-circle" src="/img/Zeitung.jpg" alt="Zeitung als Symbolbild für Behauptungen / Aussagen" width="140" height="140" />
                             <h2>Behauptungen</h2>
                             <p>Was wird behauptet, was kann belegt werden und wie{'?'} Diese Fragen wollen wir hier beantworten.</p>
-                            <p><a className="btn btn-default" href="apply" role="button">Zu den Behauptungen »</a></p>
+                            <p>
+                                <LinkContainer to="/statements">
+                                    <Button bsStyle="default">Zu den Behauptungen »</Button>
+                                </LinkContainer>
+                            </p>
                         </Col>
 
                         <Col lg={4}>
@@ -55,7 +65,11 @@ export default class Marketing extends React.Component {
                             <p>Politiker stellen Behauptungen auf, die fundiert sind oder auch nicht.
                                 Wir machen transparent, was in welchem Kontext stimmt und was nicht.</p>
 
-                            <p><a className="btn btn-default" href="apply" role="button">Zu den Politikern »</a></p>
+                            <p>
+                                <LinkContainer to="/politicians">
+                                    <Button bsStyle="default">Zu den Politikern »</Button>
+                                </LinkContainer>
+                            </p>
                         </Col>
 
                         <Col lg={4}>
@@ -66,7 +80,11 @@ export default class Marketing extends React.Component {
                             <p>Parteien setzen nicht immer um, was im Programm steht.
                                 Wir machen sichtbar, was gemacht und was nur behauptet wird.</p>
 
-                            <p><a className="btn btn-default" href="apply" role="button">Zu den Parteien »</a></p>
+                            <p>
+                                <LinkContainer to="/parties">
+                                    <Button bsStyle="default">Zu den Parteien »</Button>
+                                </LinkContainer>
+                            </p>
                         </Col>
                     </Row>
 
@@ -78,7 +96,9 @@ export default class Marketing extends React.Component {
                             <p className="lead">Menschen suchen nach einfachen Antworten. Die Welt ist aber nicht so einfach.
                                 Wir wollen die richtigen von den falschen Informationen unterscheiden.
                                 Und Populisten von den Politikern, denen wir wirklich vertrauen können.</p>
-                            <a href="apply" className="btn btn-primary pull-right">Mehr erfahren</a>
+                            <LinkContainer to="/apply">
+                                <Button bsStyle="primary" className="pull-right">Mehr erfahren</Button>
+                            </LinkContainer>
                         </Col>
                         <Col md={5}>
                             <img className="featurette-image img-responsive center-block" alt="" src="/img/FragenUndAntworten.jpg" />
@@ -94,7 +114,9 @@ export default class Marketing extends React.Component {
                             <p className="lead">Dieses System lebt von der Mitarbeit vieler interessierter Menschen,
                                 die unsere Demokratie stärken und dem sogenannten "Post-Faktischen" entgegen wirken wollen.
                             </p>
-                            <a href="apply" className="btn btn-primary pull-right">Mehr erfahren</a>
+                            <LinkContainer to="/apply">
+                                <Button bsStyle="primary" className="pull-right">Mehr erfahren</Button>
+                            </LinkContainer>
                         </Col>
                     </Row>
 
@@ -104,7 +126,9 @@ export default class Marketing extends React.Component {
                             <p className="lead">Interessiert, mitzumachen{'?'} Sehr gern!
                                 Egal wie viel Zeit zur Verfügung steht - wir haben auf jeden Fall die richtigen Aufgaben.
                             </p>
-                            <a href="apply" className="btn btn-primary pull-right">Mehr erfahren</a>
+                            <LinkContainer to="/apply">
+                                <Button bsStyle="primary" className="pull-right">Mehr erfahren</Button>
+                            </LinkContainer>
                         </Col>
                         <Col md={5}>
                             <img className="featurette-image img-responsive center-block" alt="" src="/img/volunteer.jpg" />
