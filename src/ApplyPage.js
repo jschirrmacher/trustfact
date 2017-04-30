@@ -1,7 +1,43 @@
 import React from 'react'
 import {Row, Col, Form, FormGroup, FormControl, Checkbox, Button} from 'react-bootstrap'
+import 'whatwg-fetch'
 
 export default class ApplyPage extends React.Component {
+    componentWillMount() {
+        this.applyTo = new Set()
+        this.toggleCheckbox = this.toggleCheckbox.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    toggleCheckbox(label) {
+        label = label.target.parentNode.innerText
+        if (this.applyTo.has(label)) {
+            this.applyTo.delete(label);
+        } else {
+            this.applyTo.add(label);
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+        let obj={
+            firstName: e.target.elements['first-name'].value,
+            lastName: e.target.elements['last-name'].value,
+            email: e.target.elements['email'].value,
+            applyTo: this.applyTo.toJSON().join('\n\t'),
+            info: e.target.elements.info.value
+        }
+        fetch('http://localhost:3100/apply', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(data => alert(data.responseText))
+            .catch(data => alert(data))
+    }
+
     render() {
         return <div className="container">
             <h2>Du kannst einen Unterschied machen!</h2>
@@ -28,7 +64,7 @@ export default class ApplyPage extends React.Component {
 
             <Row>
                 <Col md={6} mdOffset={3}>
-                    <Form>
+                    <Form onSubmit={this.handleSubmit}>
                         <FormGroup controlId="first-name">
                             <FormControl type="text" placeholder="Vorname" />
                         </FormGroup>
@@ -38,17 +74,17 @@ export default class ApplyPage extends React.Component {
                         <FormGroup controlId="email">
                             <FormControl type="email" placeholder="E-Mail-Adresse" />
                         </FormGroup>
-                        <FormGroup controlId="apply[]">
-                            <Checkbox inline>Ich möchte Inhalte beisteuern</Checkbox>
+                        <FormGroup controlId="apply">
+                            <Checkbox inline onChange={this.toggleCheckbox}>Ich möchte Inhalte beisteuern</Checkbox>
                         </FormGroup>
-                        <FormGroup controlId="apply[]">
-                            <Checkbox inline>Ich möchte bei der Technik mitmachen</Checkbox>
+                        <FormGroup controlId="apply">
+                            <Checkbox inline onChange={this.toggleCheckbox}>Ich möchte bei der Technik mitmachen</Checkbox>
                         </FormGroup>
-                        <FormGroup controlId="apply[]">
-                            <Checkbox inline>Ich möchte spenden</Checkbox>
+                        <FormGroup controlId="apply">
+                            <Checkbox inline onChange={this.toggleCheckbox}>Ich möchte spenden</Checkbox>
                         </FormGroup>
-                        <FormGroup controlId="email">
-                            <FormControl type="text" placeholder="Weitere Infos für uns" />
+                        <FormGroup controlId="info">
+                            <FormControl type="text" componentClass="textarea" placeholder="Weitere Infos für uns" />
                         </FormGroup>
 
                         <Button type="submit" bsStyle="primary" className="pull-right">Absenden</Button>
