@@ -10,6 +10,7 @@ import PartyRow from './PartyRow'
 import PoliticianRow from './PoliticianRow'
 import StatementRow from './StatementRow'
 import ApplyPage from './ApplyPage'
+import ContactPage from './ContactPage'
 import Footer from './Footer'
 
 import './main.scss'
@@ -25,23 +26,28 @@ ReactDOM.render((
         <div>
             <NavigationBar />
 
-            <Route path="/" exact component={() => <StartPage />} />
-            <Route path="/apply" component={() => <ApplyPage apiUrl={apiUrl} />} />
-            <Route path="/parties" component={() => (
-                <DataTable title="Parteien" data={apiUrl + "/parties"}>
-                    <PartyRow />
-                </DataTable>
-            )} />
-            <Route path="/politicians" component={() => (
-                <DataTable title="Politiker" data={apiUrl + "/politicians"}>
-                    <PartyRow />
-                </DataTable>
-            )} />
-            <Route path="/statements" component={() => (
-                <DataTable title="Aussagen" data={apiUrl + "/statements"}>
-                    <StatementRow />
-                </DataTable>
-            )} />
+            <div className="Content">
+                <Route path="/" exact component={() => <StartPage />} />
+                <Route path="/apply" component={() => <ApplyPage apiUrl={apiUrl} />} />
+                <Route path="/about" component={() => <ApplyPage apiUrl={apiUrl} />} />
+                <Route path="/contact" component={() => <ContactPage apiUrl={apiUrl} />} />
+                <Route path="/imprint" component={() => <ApplyPage apiUrl={apiUrl} />} />
+                <Route path="/parties" component={() => (
+                    <DataTable title="Parteien" data={apiUrl + "/parties"}>
+                        <PartyRow />
+                    </DataTable>
+                )} />
+                <Route path="/politicians" component={() => (
+                    <DataTable title="Politiker" data={apiUrl + "/politicians"}>
+                        <PartyRow />
+                    </DataTable>
+                )} />
+                <Route path="/statements" component={() => (
+                    <DataTable title="Aussagen" data={apiUrl + "/statements"}>
+                        <StatementRow />
+                    </DataTable>
+                )} />
+            </div>
 
             <Footer />
         </div>

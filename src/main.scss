@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
-@import url(./css/style.css);
+
+@import "css/navbar";
+@import "css/marketing";
+@import "css/featurette";
+@import "css/carousel";
 
 html, body {
   width: 100%;
@@ -11,10 +15,31 @@ html, body {
 body {
   line-height: 1.4;
   background: #ffffff;
+  color: #5a5a5a;
   transition: opacity 2s;
   -webkit-transition: opacity 2s;
+  opacity: 1;
+  font: 18px "Open Sans", Helvetica, sans-serif;
 }
-footer { font-size: 13px; margin-top: 3em; }
+
+#root {
+  height: 100%;
+  padding: 90px 0 100px;
+  position: relative;
+
+  > div {
+    height: 100%;
+  }
+}
+
+.Content {
+  min-height: 100%;
+}
+
+footer {
+  font-size: 13px;
+}
+
 @media (max-width: 480px) {
   body { font-size: 15px; }
 }
@@ -26,7 +51,12 @@ footer { font-size: 13px; margin-top: 3em; }
 }
 
 .table {
-  padding: 0 20px;
+  padding: 0 20px 20px;
+  margin: 0;
+
+  ul {
+    margin: 0;
+  }
 }
 
 /* enables CSS3 transition for simple collapses, accordion and also navbar in responsive view */
@@ -34,3 +64,40 @@ footer { font-size: 13px; margin-top: 3em; }
 
 /* styles the close button for the dismissible popovers */
 .popover .close { position: absolute; top: 7px; right: 10px; }
+
+.checkbox .form-control {
+  height: 1.3em;
+}
+
+footer {
+  background: #eee;
+  height: 100px;
+  padding: 35px;
+
+  .attribution {
+    font-size: 12px;
+  }
+}
+
+.carousel .item {
+  background-size: cover;
+  background-position: center;
+}
+
+.validation-message {
+  font-size: 14px;
+  color: #a94442;
+}
+
+.imprint p {
+  font-size: 14px;
+}
+
+.aboutus {
+  img.pull-right {
+    padding: 20px 0 20px 20px;
+  }
+  img.pull-left {
+    padding: 20px 20px 20px 0;
+  }
+}
