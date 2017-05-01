@@ -34,8 +34,8 @@ export default class ApplyPage extends React.Component {
             },
             body: JSON.stringify(obj)
         })
-            .then(data => alert(data.responseText))
-            .catch(data => alert(data))
+            .then(data => alert('Danke für die Kontaktaufnahme! Wir melden uns schnellstmöglich!'))
+            .catch(data => alert('Ein Fehler ist aufgetreten: ' + data))
     }
 
     render() {
