@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Route } from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
 
 import NavigationBar from './NavigationBar'
 import StartPage from './StartPage'
