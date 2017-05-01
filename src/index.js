@@ -10,6 +10,7 @@ import PartyRow from './PartyRow'
 import PoliticianRow from './PoliticianRow'
 import StatementRow from './StatementRow'
 import ApplyPage from './ApplyPage'
+import AboutPage from './AboutPage'
 import ContactPage from './ContactPage'
 import Footer from './Footer'
 
@@ -29,7 +30,7 @@ ReactDOM.render((
             <div className="Content">
                 <Route path="/" exact component={() => <StartPage />} />
                 <Route path="/apply" component={() => <ApplyPage apiUrl={apiUrl} />} />
-                <Route path="/about" component={() => <ApplyPage apiUrl={apiUrl} />} />
+                <Route path="/about" component={() => <AboutPage />} />
                 <Route path="/contact" component={() => <ContactPage apiUrl={apiUrl} />} />
                 <Route path="/imprint" component={() => <ApplyPage apiUrl={apiUrl} />} />
                 <Route path="/parties" component={() => (
