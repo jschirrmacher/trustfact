@@ -1,4 +1,5 @@
 import React from 'react'
+import {LinkContainer} from 'react-router-bootstrap'
 
 export default class Footer extends React.Component {
     render() {
@@ -6,8 +7,10 @@ export default class Footer extends React.Component {
         return (
             <footer>
                 <div className="pull-left">
-                    <p><a href="#"></a></p>
-                    <p><a href="imprint">Datenschutz</a> · <a href="imprint">Impressum</a></p>
+                    <p><LinkContainer to="imprint"><span>Datenschutz</span></LinkContainer>
+                        <span> · </span>
+                        <LinkContainer to="imprint"><span>Impressum</span></LinkContainer>
+                    </p>
                 </div>
                 <ul className="attribution pull-right">
                     <li>Die meisten Bilder stammen von <a href="https://pixabay.com/">Pixabay</a>.</li>
