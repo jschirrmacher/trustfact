@@ -131,7 +131,7 @@ export default class StartPage extends React.Component {
                             </LinkContainer>
                         </Col>
                         <Col md={5}>
-                            <img className="featurette-image img-responsive center-block" alt="" src="/img/volunteer.jpg" />
+                            <img className="featurette-image img-responsive center-block" alt="" src="/img/Volunteer.jpg" />
                         </Col>
                     </Row>
                 </div>
