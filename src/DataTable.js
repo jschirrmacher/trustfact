@@ -11,7 +11,7 @@ export default class DataTable extends Component {
     }
 
     listener(event) {
-        this.setState({data: JSON.parse(event.currentTarget.responseText)})
+        this.setState({data: JSON.parse(event.currentTarget.responseText).data})
     }
 
     render() {

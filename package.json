@@ -1,7 +1,7 @@
 {
   "name": "TrustFact",
   "version": "1.0.0",
-  "description": "My first React.JS test",
+  "description": "TrustFact Frontend",
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --progress --colors",
