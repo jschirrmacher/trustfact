@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         path: './htdocs',
-        publicPath: 'http://localhost:8080/',
+        publicPath: 'https://trustfact.dilab.co/',
         filename: 'index.js'
     },
     devtool: debug && 'eval',
