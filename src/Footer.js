@@ -13,8 +13,8 @@ export default class Footer extends React.Component {
                     </p>
                 </div>
                 <ul className="attribution pull-right">
-                    <li>Die meisten Bilder stammen von <a href="https://pixabay.com/">Pixabay</a>.</li>
-                    <li>Bild des Parlaments im Carousel: By Qualle (Own work) <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>,
+                    <li>Die Bilder im Seitentitel und auf der Hauptseite stammen i.d.R. von <a href="https://pixabay.com/">Pixabay</a>.</li>
+                    <li>Das Bild des Parlaments auf der Hauptseite: By Qualle (Own work) <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>,
                         via <a href="https://de.wikipedia.org/wiki/Datei:Bonn_Bundestag_Plenarsaal1.jpg">Wikimedia Commons</a>
                     </li>
                     <li>Symbolbild einer Sitzverteilung im Parlament:
