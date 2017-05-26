@@ -3,6 +3,11 @@ import React from 'react';
 export default class Table extends React.Component {
     render() {
         const Row = this.props.children.type;
+        const copyright = this.props.copyright && this.props.copyright.length ? (
+                <ul className="copyright-info">
+                    {this.props.copyright.map(row => (<li>{row}</li>))}
+                </ul>
+            ) : ''
 
         return (
             <div>
@@ -18,6 +23,7 @@ export default class Table extends React.Component {
                             : 'Keine Daten gefunden'
                         }
                     </ul>
+                    {copyright}
                 </div>
             </div>
         );

@@ -11,12 +11,12 @@ export default class DataTable extends Component {
     }
 
     listener(event) {
-        this.setState({data: JSON.parse(event.currentTarget.responseText).data})
+        this.setState({data: JSON.parse(event.currentTarget.responseText)})
     }
 
     render() {
         return this.state && (
-            <Table name={this.props.title} items={this.state.data}>
+            <Table name={this.props.title} items={this.state.data.data} copyright={this.state.data.licenses}>
                 {this.props.children}
             </Table>
         )
