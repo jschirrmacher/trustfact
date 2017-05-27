@@ -5,7 +5,19 @@ export default class Table extends React.Component {
         const Row = this.props.children.type;
         const copyright = this.props.copyright && this.props.copyright.length ? (
                 <ul className="copyright-info">
-                    {this.props.copyright.map(row => (<li>{row}</li>))}
+                    {this.props.copyright.map(row => {
+                        let parts = row.split(/(\[.*?\])/).map(part => {
+                            if (!part.match(/^\[.*\]$/)) {
+                                return part
+                            } else {
+                                let components = part.split(/\[(.*?),\s*(.*)\]/)
+                                return (
+                                    <a href={components[2]} target="_blank">{components[1]}</a>
+                                )
+                            }
+                        })
+                        return (<li>{parts}</li>)
+                    })}
                 </ul>
             ) : ''
 
